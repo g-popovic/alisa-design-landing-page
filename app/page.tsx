@@ -10,20 +10,20 @@ import ProcessSection from "@/components/process-section";
 import Contact from "@/components/contact";
 
 export default function Home() {
-  return (
-    <>
-      <IntroOverlay />
-      <Navbar />
-      <main>
-        <Hero />
-        <MarqueeBar />
-        <Philosophy />
-        <ScrollSection />
-        <Services />
-        <Portfolio />
-        <ProcessSection />
-        <Contact />
-      </main>
-    </>
-  );
+	return (
+		<>
+			<IntroOverlay />
+			<Navbar />
+			<main>
+				<Hero />
+				<MarqueeBar />
+				<Philosophy />
+				<ScrollSection />
+				<Services />
+				<Portfolio />
+				<ProcessSection />
+				<Contact />
+			</main>
+		</>
+	);
 }
