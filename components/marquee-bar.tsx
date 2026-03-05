@@ -14,7 +14,9 @@ export default function MarqueeBar() {
     <div className="marquee-bar" aria-hidden="true">
       <div className="marquee-track">
         {doubled.map((item, i) => (
-          <span key={i} className="marquee-item">{item}</span>
+          <span key={i} className="marquee-item">
+            {item}
+          </span>
         ))}
       </div>
     </div>

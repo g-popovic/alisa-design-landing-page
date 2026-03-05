@@ -9,7 +9,12 @@ interface FadeInProps {
   className?: string;
 }
 
-export default function FadeIn({ children, delay, style, className }: FadeInProps) {
+export default function FadeIn({
+  children,
+  delay,
+  style,
+  className,
+}: FadeInProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -25,7 +30,7 @@ export default function FadeIn({ children, delay, style, className }: FadeInProp
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
     );
 
     obs.observe(el);

@@ -6,21 +6,21 @@ const projects = [
     src: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&q=80&auto=format&fit=crop",
     alt: "The Kensington Residence",
     name: "The Kensington Residence",
-    type: "Residential · London",
+    type: "Residential · Podgorica",
     delay: "0s",
   },
   {
     src: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=900&q=80&auto=format&fit=crop",
     alt: "Clerkenwell Loft",
     name: "Clerkenwell Loft",
-    type: "Residential · London",
+    type: "Residential · Podgorica",
     delay: "0.08s",
   },
   {
     src: "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?w=900&q=80&auto=format&fit=crop",
     alt: "Mayfair Kitchen",
     name: "Mayfair Kitchen",
-    type: "Residential · London",
+    type: "Residential · Podgorica",
     delay: "0.12s",
   },
   {
@@ -34,21 +34,21 @@ const projects = [
     src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80&auto=format&fit=crop",
     alt: "Camden Creative Office",
     name: "Camden Creative Office",
-    type: "Commercial · London",
+    type: "Commercial · Podgorica",
     delay: "0.1s",
   },
   {
     src: "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80&auto=format&fit=crop",
     alt: "Notting Hill Suite",
     name: "Notting Hill Suite",
-    type: "Residential · London",
+    type: "Residential · Podgorica",
     delay: "0.16s",
   },
   {
     src: "https://images.unsplash.com/photo-1598928636135-d146006ff4be?w=800&q=80&auto=format&fit=crop",
     alt: "Shoreditch Bar & Lounge",
     name: "Shoreditch Bar & Lounge",
-    type: "Hospitality · London",
+    type: "Hospitality · Podgorica",
     delay: "0.22s",
   },
 ];
@@ -65,7 +65,9 @@ export default function Portfolio() {
             </div>
             <h2 className="portfolio-heading">Recent Projects</h2>
           </div>
-          <a href="#" className="portfolio-all-link">View all projects →</a>
+          <a href="#" className="portfolio-all-link">
+            View all projects →
+          </a>
         </div>
 
         <div className="portfolio-grid">

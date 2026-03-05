@@ -35,11 +35,10 @@ export default function Hero() {
         playsInline
       />
 
-      <div className="hero-eyebrow">Interior Design Studio — London</div>
+      <div className="hero-eyebrow">Interior Design Studio — Podgorica</div>
 
       <h1 className="hero-title">
-        Where{" "}
-        <em>spaces</em>
+        Where <em>spaces</em>
         <br />
         become stories
       </h1>
@@ -51,8 +50,12 @@ export default function Hero() {
         </p>
 
         <div className="hero-cta-group">
-          <a href="#portfolio" className="btn-primary">View Work</a>
-          <a href="#contact" className="btn-ghost">Start a Project →</a>
+          <a href="#portfolio" className="btn-primary">
+            View Work
+          </a>
+          <a href="#contact" className="btn-ghost">
+            Start a Project →
+          </a>
         </div>
       </div>
 

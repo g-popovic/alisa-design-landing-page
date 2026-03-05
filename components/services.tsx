@@ -47,7 +47,9 @@ export default function Services() {
                 <div className="service-number">{number}</div>
                 <h3 className="service-title">{title}</h3>
                 <p className="service-desc">{desc}</p>
-                <a href="#contact" className="service-link">Enquire →</a>
+                <a href="#contact" className="service-link">
+                  Enquire →
+                </a>
               </div>
             </FadeIn>
           ))}
