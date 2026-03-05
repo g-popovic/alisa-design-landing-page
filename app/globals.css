@@ -398,7 +398,7 @@ body {
 @media (max-width: 767px) {
   .hero {
     /* TODO: This is purely to compensate for iOS's stupid browser bar */
-    padding: 0 1.5rem 18vh;
+    padding: 0 1.5rem 20.1vh;
     min-height: 110vh;
   }
 }
