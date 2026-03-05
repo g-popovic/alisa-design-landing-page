@@ -8,7 +8,9 @@
 	--text-dark: #1a1817;
 	--text-mid: #4a4540;
 	--muted: #8a837a;
-	--accent: #b8a07a;
+	/* --accent: #b8a07a; */
+	--accent: #b23a40;
+	/* --accent: #d3222a; */
 	--border-l: rgba(0, 0, 0, 0.1);
 	--border-d: rgba(255, 255, 255, 0.07);
 }
@@ -100,7 +102,7 @@ body {
 }
 
 .intro-logo-wrap {
-	width: min(20rem, 90vw);
+	width: min(20rem, 50vw);
 	filter: blur(12px);
 	animation:
 		blur-in 1.2s 1s ease-in forwards,
@@ -126,6 +128,12 @@ body {
 		blur-in 1.2s 0.5s ease-in forwards,
 		intro-fade-in 1.2s 0.5s ease-in forwards,
 		intro-fade-out 1s 3s ease-out forwards;
+}
+
+@media (max-width: 767px) {
+	.intro-logo-text {
+		font-size: 2.01rem;
+	}
 }
 
 @keyframes intro-fade-out {
