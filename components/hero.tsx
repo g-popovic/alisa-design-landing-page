@@ -26,6 +26,14 @@ export default function Hero() {
     <section className="hero">
       <div className="hero-gradient" />
       <div className="hero-grain" />
+      <video
+        className="hero-video"
+        src="/hero-video.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
 
       <div className="hero-eyebrow">Interior Design Studio — London</div>
 
