@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-	title: "Forma Studio — Interior Design",
+	title: "Alisa Design — Interior Design",
 	description:
 		"We craft interiors that reflect who you are — thoughtful, considered spaces designed to inspire the way you live and work."
 };

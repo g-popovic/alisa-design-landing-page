@@ -95,7 +95,7 @@ export default function IntroOverlay() {
 					fill='none'
 					xmlns='http://www.w3.org/2000/svg'
 					role='img'
-					aria-label='Forma Studio Logo'>
+					aria-label='Alisa Design Logo'>
 					<defs>
 						<mask
 							id='m0'

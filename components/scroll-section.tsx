@@ -19,7 +19,7 @@ export default function ScrollSection() {
 				}>
 				<Image
 					src='https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1800&q=80&auto=format&fit=crop'
-					alt='Forma Studio — interior design project'
+					alt='Alisa Design — interior design project'
 					fill
 					style={{ objectFit: "cover", objectPosition: "center top" }}
 					loading='lazy'
