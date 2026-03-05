@@ -5,42 +5,15 @@ import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 
 export default function ScrollSection() {
   return (
-    <section style={{ background: "var(--dark-2)", overflow: "hidden" }}>
+    <section className="scroll-section">
       <ContainerScroll
         titleComponent={
-          <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
-            <div
-              style={{
-                fontSize: "0.72rem",
-                fontWeight: 500,
-                letterSpacing: "0.28em",
-                textTransform: "uppercase",
-                color: "var(--accent)",
-                marginBottom: "1.25rem",
-              }}
-            >
-              Portfolio Preview
-            </div>
-            <h2
-              style={{
-                fontFamily: "var(--font-playfair), 'Playfair Display', serif",
-                fontSize: "clamp(2.5rem, 5.5vw, 5rem)",
-                fontWeight: 500,
-                color: "#fff",
-                lineHeight: 1.08,
-              }}
-            >
+          <div className="scroll-section-title">
+            <div className="scroll-section-eyebrow">Portfolio Preview</div>
+            <h2 className="scroll-section-heading">
               Interiors that
               <br />
-              <em
-                style={{
-                  display: "block",
-                  fontStyle: "italic",
-                  color: "rgba(255,255,255,0.38)",
-                }}
-              >
-                speak for themselves
-              </em>
+              <em>speak for themselves</em>
             </h2>
           </div>
         }

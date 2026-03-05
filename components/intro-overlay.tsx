@@ -8,9 +8,7 @@ export default function IntroOverlay() {
   useEffect(() => {
     document.body.style.overflow = "hidden";
 
-    const reduceMotion = window.matchMedia?.(
-      "(prefers-reduced-motion: reduce)"
-    )?.matches;
+    const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
 
     if (!reduceMotion) {
       const svg = document.getElementById("intro-logo") as unknown as SVGSVGElement;
@@ -20,9 +18,7 @@ export default function IntroOverlay() {
         const D = Number(cs.getPropertyValue("--dur")) || 900;
         const S = Number(cs.getPropertyValue("--stagger")) || 180;
 
-        const wipes = ["w0", "w1", "w2", "w3", "w4", "w5"].map(
-          (id) => document.getElementById(id) as unknown as SVGRectElement
-        );
+        const wipes = ["w0", "w1", "w2", "w3", "w4", "w5"].map((id) => document.getElementById(id) as unknown as SVGRectElement);
 
         const FULL = Math.ceil(Math.hypot(vb.width, vb.height) * 2);
         const ease = (t: number) => 1 - Math.pow(1 - t, 1.5);
@@ -83,20 +79,8 @@ export default function IntroOverlay() {
   }, []);
 
   return (
-    <div
-      ref={overlayRef}
-      style={{
-        position: "fixed",
-        inset: 0,
-        background: "#000",
-        zIndex: 1000,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        transition: "opacity 1.1s cubic-bezier(0.4, 0, 0.2, 1)",
-      }}
-    >
-      <div style={{ width: "min(20rem, 90vw)" }}>
+    <div ref={overlayRef} className="intro-overlay">
+      <div className="intro-logo-wrap">
         <svg
           id="intro-logo"
           viewBox="0 0 755 457"
@@ -104,49 +88,42 @@ export default function IntroOverlay() {
           xmlns="http://www.w3.org/2000/svg"
           role="img"
           aria-label="Forma Studio Logo"
-          style={{ width: "100%", height: "auto", display: "block" }}
         >
           <defs>
             <mask id="m0" maskUnits="userSpaceOnUse" x="0" y="0" width="755" height="457" maskContentUnits="userSpaceOnUse">
               <rect x="0" y="0" width="755" height="457" fill="black" />
-              <rect id="w0" className="wipe" x="0" y="-543.916" width="0" height="2000" fill="white"
-                transform="rotate(-45 0 456.084)" />
+              <rect id="w0" className="wipe" x="0" y="-543.916" width="0" height="2000" fill="white" transform="rotate(-45 0 456.084)" />
             </mask>
             <mask id="m1" maskUnits="userSpaceOnUse" x="0" y="0" width="755" height="457" maskContentUnits="userSpaceOnUse">
               <rect x="0" y="0" width="755" height="457" fill="black" />
-              <rect id="w1" className="wipe" x="226.274" y="-770.19" width="0" height="2000" fill="white"
-                transform="rotate(45 226.274 229.81)" />
+              <rect id="w1" className="wipe" x="226.274" y="-770.19" width="0" height="2000" fill="white" transform="rotate(45 226.274 229.81)" />
             </mask>
             <mask id="m2" maskUnits="userSpaceOnUse" x="0" y="0" width="755" height="457" maskContentUnits="userSpaceOnUse">
               <rect x="0" y="0" width="755" height="457" fill="black" />
-              <rect id="w2" className="wipe" x="301.935" y="-773.726" width="0" height="2000" fill="white"
-                transform="rotate(-45 301.935 226.274)" />
+              <rect id="w2" className="wipe" x="301.935" y="-773.726" width="0" height="2000" fill="white" transform="rotate(-45 301.935 226.274)" />
             </mask>
             <mask id="m3" maskUnits="userSpaceOnUse" x="0" y="0" width="755" height="457" maskContentUnits="userSpaceOnUse">
               <rect x="0" y="0" width="755" height="457" fill="black" />
-              <rect id="w3" className="wipe" x="528.209" y="-1000" width="0" height="2000" fill="white"
-                transform="rotate(45 528.209 0)" />
+              <rect id="w3" className="wipe" x="528.209" y="-1000" width="0" height="2000" fill="white" transform="rotate(45 528.209 0)" />
             </mask>
             <mask id="m4" maskUnits="userSpaceOnUse" x="0" y="0" width="755" height="457" maskContentUnits="userSpaceOnUse">
               <rect x="0" y="0" width="755" height="457" fill="black" />
-              <rect id="w4" className="wipe" x="754.483" y="-773.726" width="0" height="2000" fill="white"
-                transform="rotate(135 754.483 226.274)" />
+              <rect id="w4" className="wipe" x="754.483" y="-773.726" width="0" height="2000" fill="white" transform="rotate(135 754.483 226.274)" />
             </mask>
             <mask id="m5" maskUnits="userSpaceOnUse" x="0" y="0" width="755" height="457" maskContentUnits="userSpaceOnUse">
               <rect x="0" y="0" width="755" height="457" fill="black" />
-              <rect id="w5" className="wipe" x="528.209" y="-547.452" width="0" height="2000" fill="white"
-                transform="rotate(-135 528.209 452.548)" />
+              <rect id="w5" className="wipe" x="528.209" y="-547.452" width="0" height="2000" fill="white" transform="rotate(-135 528.209 452.548)" />
             </mask>
           </defs>
 
           {/* Chevron */}
-          <path mask="url(#m0)" d="M0 456.084L226.274 229.81V330.219L100.409 456.084H0Z" fill="white"/>
-          <path mask="url(#m1)" d="M226.274 229.81L452.548 456.084H352.139L226.274 330.219V229.81Z" fill="#818287"/>
+          <path mask="url(#m0)" d="M0 456.084L226.274 229.81V330.219L100.409 456.084H0Z" fill="white" />
+          <path mask="url(#m1)" d="M226.274 229.81L452.548 456.084H352.139L226.274 330.219V229.81Z" fill="#818287" />
           {/* Diamond */}
-          <path mask="url(#m2)" d="M301.935 226.274L528.209 0V100.409L402.344 226.274L301.935 226.274Z" fill="#D3222A"/>
-          <path mask="url(#m3)" d="M528.209 0L754.483 226.274H654.074L528.209 100.409V0Z" fill="#EF018D"/>
-          <path mask="url(#m4)" d="M754.483 226.274L528.209 452.548V352.139L654.074 226.274H754.483Z" fill="#A7228B"/>
-          <path mask="url(#m5)" d="M528.209 452.548L301.935 226.274L402.344 226.274L528.209 352.139V452.548Z" fill="#95242A"/>
+          <path mask="url(#m2)" d="M301.935 226.274L528.209 0V100.409L402.344 226.274L301.935 226.274Z" fill="#D3222A" />
+          <path mask="url(#m3)" d="M528.209 0L754.483 226.274H654.074L528.209 100.409V0Z" fill="#EF018D" />
+          <path mask="url(#m4)" d="M754.483 226.274L528.209 452.548V352.139L654.074 226.274H754.483Z" fill="#A7228B" />
+          <path mask="url(#m5)" d="M528.209 452.548L301.935 226.274L402.344 226.274L528.209 352.139V452.548Z" fill="#95242A" />
         </svg>
       </div>
     </div>
