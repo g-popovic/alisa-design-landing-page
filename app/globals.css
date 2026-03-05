@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+/* ─── Logo animation variables ─────────────────────────────── */
+:root {
+  --dur: 900;
+  --stagger: 180;
+  --gap: 99999;
+}
+
+/* ─── Color tokens ──────────────────────────────────────────── */
+:root {
+  --dark:      #0b0b0b;
+  --dark-2:    #111111;
+  --light:     #f7f4ef;
+  --text-dark: #1a1817;
+  --text-mid:  #4a4540;
+  --muted:     #8a837a;
+  --accent:    #b8a07a;
+  --border-l:  rgba(0,0,0,0.1);
+  --border-d:  rgba(255,255,255,0.07);
+}
+
+body {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  background: var(--dark);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wipe { display: none; }
+}
+
+/* ─── Keyframes ─────────────────────────────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes drip {
+  0%   { transform: scaleY(0); transform-origin: top; opacity: 1; }
+  50%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
+  51%  { transform: scaleY(1); transform-origin: bottom; opacity: 1; }
+  100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+}
+
+/* ─── Fade-in utility ───────────────────────────────────────── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
