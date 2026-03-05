@@ -288,8 +288,10 @@ body {
   pointer-events: none;
   filter: brightness(0.5);
   /* mask-image: radial-gradient(ellipse 50% 45% at 75% 41%, black 0%, black 20%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0.15) 62%, transparent 78%); */
-  /* mask-image: radial-gradient(ellipse 65% 27% at 88% 50%, black 0%, transparent 100%); */
-  mask-image: linear-gradient(to bottom, transparent 15%, black 45%, black 51%, transparent 80%);
+  mask-image: radial-gradient(ellipse 71% 38% at 110% 50%, black 0%, transparent 100%);
+  /* mask-image: linear-gradient(to bottom, transparent 12%, black 41%, black 48%, transparent 74%); */
+  /* mask-image: radial-gradient(circle at 36% 100%, black 0%, black 26vh, transparent 30vh), linear-gradient(to right, transparent 30%, black 42%); */
+  /* mask-composite: subtract; */
   transform: translateY(-50%);
 }
 
