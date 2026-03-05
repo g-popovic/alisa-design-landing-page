@@ -253,7 +253,7 @@ export default function IntroOverlay() {
 					/>
 				</svg>
 			</div>
-			<h1 className='intro-logo-text'>Alisa Osmanagić</h1>
+			<h1 className='intro-logo-text'>Alisa Design</h1>
 		</div>
 	);
 }

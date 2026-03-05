@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 export default function Navbar() {
@@ -23,9 +24,12 @@ export default function Navbar() {
 
 	return (
 		<nav ref={navRef} className='nav'>
-			<a href='#' className='nav-logo'>
-				Alisa Design
-			</a>
+			<div className='nav-logo-wrap'>
+				<Image src='/logo.svg' alt='Alisa Design Logo' width={60} height={60} />
+				<a href='#' className='nav-logo'>
+					Alisa Design
+				</a>
+			</div>
 
 			<ul className='nav-links'>
 				{[
