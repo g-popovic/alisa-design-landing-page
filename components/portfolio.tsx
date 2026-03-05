@@ -75,13 +75,7 @@ export default function Portfolio() {
             <FadeIn key={name} delay={delay}>
               <div className="p-item">
                 <div className="p-item-img-wrap">
-                  <Image
-                    src={src}
-                    alt={alt}
-                    fill
-                    style={{ objectFit: "cover" }}
-                    loading="lazy"
-                  />
+                  <Image src={src} alt={alt} fill loading="lazy" />
                 </div>
                 <div className="p-overlay">
                   <div className="p-name">{name}</div>
