@@ -14,14 +14,18 @@ export default function IntroOverlay() {
       const svg = document.getElementById("intro-logo") as unknown as SVGSVGElement;
       if (svg) {
         const vb = svg.viewBox.baseVal;
-        const cs = getComputedStyle(document.documentElement);
-        const D = Number(cs.getPropertyValue("--dur")) || 900;
-        const S = Number(cs.getPropertyValue("--stagger")) || 180;
+        const D = 400; // ms per wipe
 
         const wipes = ["w0", "w1", "w2", "w3", "w4", "w5"].map((id) => document.getElementById(id) as unknown as SVGRectElement);
+        const paths = Array.from(svg.querySelectorAll("path[mask]")) as SVGGraphicsElement[];
 
-        const FULL = Math.ceil(Math.hypot(vb.width, vb.height) * 2);
-        const ease = (t: number) => 1 - Math.pow(1 - t, 1.5);
+        // Compute per-wipe target width from each path's bbox diagonal
+        const fulls = paths.map((p) => {
+          const b = p.getBBox();
+          return Math.ceil(Math.hypot(b.width, b.height));
+        });
+
+        const ease = (t: number) => 1 - Math.pow(1 - t, 1);
 
         let raf: number;
 
@@ -38,14 +42,20 @@ export default function IntroOverlay() {
             const elapsed = now - t0;
             let done = true;
             for (let i = 0; i < wipes.length; i++) {
-              const t = (elapsed - i * S) / D;
+              let sequence = i;
+              if (i >= 2) {
+                sequence = i - 2;
+              }
+
+              const t = (elapsed - sequence * D) / D;
+              const f = fulls[i] || 320;
               if (t <= 0) {
                 wipes[i]?.setAttribute("width", "0");
                 done = false;
               } else if (t >= 1) {
-                wipes[i]?.setAttribute("width", String(FULL));
+                wipes[i]?.setAttribute("width", String(f));
               } else {
-                wipes[i]?.setAttribute("width", String(FULL * ease(t)));
+                wipes[i]?.setAttribute("width", String(f * ease(t)));
                 done = false;
               }
             }
@@ -60,20 +70,7 @@ export default function IntroOverlay() {
     const overlay = overlayRef.current;
     if (!overlay) return;
 
-    const fadeTimer = setTimeout(() => {
-      overlay.style.opacity = "0";
-      overlay.style.pointerEvents = "none";
-      document.body.style.overflow = "";
-
-      const removeTimer = setTimeout(() => {
-        overlay.style.display = "none";
-      }, 1200);
-
-      return () => clearTimeout(removeTimer);
-    }, 2800);
-
     return () => {
-      clearTimeout(fadeTimer);
       document.body.style.overflow = "";
     };
   }, []);
@@ -81,14 +78,7 @@ export default function IntroOverlay() {
   return (
     <div ref={overlayRef} className="intro-overlay">
       <div className="intro-logo-wrap">
-        <svg
-          id="intro-logo"
-          viewBox="0 0 755 457"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          role="img"
-          aria-label="Forma Studio Logo"
-        >
+        <svg id="intro-logo" viewBox="0 0 755 457" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Forma Studio Logo">
           <defs>
             <mask id="m0" maskUnits="userSpaceOnUse" x="0" y="0" width="755" height="457" maskContentUnits="userSpaceOnUse">
               <rect x="0" y="0" width="755" height="457" fill="black" />
@@ -126,6 +116,7 @@ export default function IntroOverlay() {
           <path mask="url(#m5)" d="M528.209 452.548L301.935 226.274L402.344 226.274L528.209 352.139V452.548Z" fill="#95242A" />
         </svg>
       </div>
+      <h1 className="intro-logo-text">Alisa Osmanagić</h1>
     </div>
   );
 }
