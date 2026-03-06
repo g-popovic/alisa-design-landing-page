@@ -90,7 +90,7 @@ body {
 ────────────────────────────────────────────────────────────── */
 .intro-overlay {
   position: fixed;
-  inset: 0;
+  inset: -10rem;
   background: #080808;
   z-index: 1000;
   display: flex;
