@@ -33,7 +33,6 @@ export default function IntroOverlay() {
       "intro-logo",
     ) as unknown as SVGSVGElement;
     if (svg) {
-      const vb = svg.viewBox.baseVal;
       const D = 300; // ms per wipe
 
       const wipes = ["w0", "w1", "w2", "w3", "w4", "w5"].map(
